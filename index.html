@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시작 페이지</title>
+  <link rel="icon" href="https://www.google.com/favicon.ico">
+
+  <!-- Google Fonts: Roboto & Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- External JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <!-- Left: SDU Brand Text-Logo -->
+    <a href="https://www.sdu.ac.kr" target="_blank" rel="noopener noreferrer" class="sdu-link" title="서울디지털대학교 홈페이지로 이동">
+      <span class="sdu-badge">SDU</span>
+      <span class="sdu-name">서울디지털대학교</span>
+    </a>
+
+    <!-- Right: Weather Widget [Seoul, Jeju] -->
+    <div class="weather-container">
+      <!-- Seoul Weather Card -->
+      <div class="weather-card" id="weather-seoul" title="클릭하여 날씨 새로고침">
+        <span class="city-label">서울:</span>
+        <span class="temp-val" id="seoul-temp">--°C</span>
+        <span class="weather-desc" id="seoul-desc">불러오는 중...</span>
+        <span class="weather-icon" id="seoul-icon">⏳</span>
+      </div>
+
+      <!-- Jeju Weather Card -->
+      <div class="weather-card" id="weather-jeju" title="클릭하여 날씨 새로고침">
+        <span class="city-label">제주:</span>
+        <span class="temp-val" id="jeju-temp">--°C</span>
+        <span class="weather-desc" id="jeju-desc">불러오는 중...</span>
+        <span class="weather-icon" id="jeju-icon">⏳</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Center Section -->
+  <main>
+    <!-- Google Search Form -->
+    <form class="search-form" id="search-form" action="https://www.google.com/search" method="GET" role="search">
+      <div class="search-bar">
+        <!-- Search Loupe Icon -->
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+
+        <input 
+          type="text" 
+          name="q" 
+          id="search-input" 
+          class="search-input" 
+          autocomplete="off" 
+          autofocus 
+          placeholder="Google 검색"
+          aria-label="Google 검색"
+        >
+
+        <!-- Clear Button -->
+        <button type="button" class="clear-btn" id="clear-btn" aria-label="입력 내용 지우기">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Search Action Buttons -->
+      <div class="search-buttons">
+        <button type="submit" class="g-btn">Google 검색</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer with Quote (Positioned at bottom center, exactly as requested) -->
+  <footer>
+    <div class="footer-quote" id="footer-quote" title="클릭하여 다른 명언 보기">
+      <span id="quote-text">"삶이 있는 한 희망은 있다."</span> - <span id="quote-author">키케로</span>
+    </div>
+  </footer>
+
+</body>
+</html>

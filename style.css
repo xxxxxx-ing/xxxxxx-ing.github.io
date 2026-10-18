@@ -1,0 +1,298 @@
+/* ==========================================================================
+   Google Style Start Page Stylesheet
+   ========================================================================== */
+
+:root {
+  --bg-color: #ffffff;
+  --text-main: #202124;
+  --text-sub: #5f6368;
+  --border-color: #dfe1e5;
+  --search-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  --btn-bg: #f8f9fa;
+  --btn-text: #3c4043;
+  --btn-border: #f8f9fa;
+  --btn-hover-border: #dadce0;
+  --accent-blue: #1a73e8;
+  --footer-bg: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------
+   Top Navigation Header
+--------------------------------------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  width: 100%;
+  z-index: 10;
+}
+
+/* SDU Text-Logo (Top-Left) */
+.sdu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.sdu-link:hover {
+  opacity: 0.8;
+}
+
+.sdu-badge {
+  color: #1a73e8;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sdu-name {
+  color: #202124;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.3px;
+}
+
+/* Weather Section (Top-Right) */
+.weather-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.weather-card {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  background: #ffffff;
+  border: 1px solid #e0e2e6;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-size: 13.5px;
+  color: #3c4043;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.weather-card:hover {
+  border-color: #c6c9ce;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+}
+
+.weather-card .city-label {
+  font-weight: 600;
+  color: #3c4043;
+}
+
+.weather-card .temp-val {
+  font-weight: 500;
+  color: #202124;
+  margin-left: 4px;
+}
+
+.weather-card .weather-desc {
+  color: #5f6368;
+  margin-left: 6px;
+}
+
+.weather-card .weather-icon {
+  font-size: 15px;
+  margin-left: 6px;
+  line-height: 1;
+  display: inline-block;
+}
+
+/* ---------------------------------------------------------
+   Main Center Section
+--------------------------------------------------------- */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  flex: 1;
+}
+
+/* Search Form */
+.search-form {
+  width: 100%;
+  max-width: 584px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 0 16px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.06);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.search-bar:hover,
+.search-bar:focus-within {
+  box-shadow: var(--search-shadow);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  fill: #9aa0a6;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: var(--text-main);
+  background: transparent;
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: #80868b;
+  font-weight: 400;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #70757a;
+  transition: color 0.15s;
+}
+
+.clear-btn:hover {
+  color: var(--text-main);
+}
+
+/* Search Action Buttons */
+.search-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.g-btn {
+  background-color: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--btn-text);
+  font-size: 14px;
+  padding: 9px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  user-select: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.g-btn:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-color: var(--btn-hover-border);
+  color: #202124;
+}
+
+/* ---------------------------------------------------------
+   Footer Bar with Quote (Centered, Clean Minimalist Style)
+--------------------------------------------------------- */
+footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid #e8e8e8;
+  width: 100%;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-quote {
+  font-size: 13.5px;
+  color: #666666;
+  font-style: normal;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease, opacity 0.3s ease;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  max-width: 900px;
+}
+
+.footer-quote:hover {
+  color: #202124;
+}
+
+#quote-text {
+  font-weight: 400;
+}
+
+#quote-author {
+  font-weight: 500;
+  color: #757575;
+}
+
+/* ---------------------------------------------------------
+   Responsive Layout
+--------------------------------------------------------- */
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .weather-container {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  footer {
+    padding: 14px 16px;
+  }
+
+  .footer-quote {
+    font-size: 12.5px;
+  }
+}
